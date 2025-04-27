@@ -71,3 +71,6 @@ def main():
         
         time.sleep(DELAY)
         pin += 1
+
+if __name__ == "__main__":
+    main()
